@@ -1,6 +1,14 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).\
+This project is inspired by [CleverProgrammers](https://github.com/CleverProgrammers/twitter-clone).
+warn [TS version incompatible](https://github.com/facebook/create-react-app/issues/9868)
+
+## Stack I used
+
+1. TypeScript
+2. styled components
+3. Material UI
 
 ## Available Scripts
 
