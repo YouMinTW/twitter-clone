@@ -1,9 +1,9 @@
 import React from 'react';
-import Sidebar from './Sidebar';
-import styled from 'styled-components';
-import { ThemeProvider } from 'styled-components';
-import theme from './theme';
+import styled, { ThemeProvider } from 'styled-components';
 import { StylesProvider } from '@material-ui/core/styles';
+import Sidebar from './Sidebar';
+import Feed from './Feed';
+import theme from './theme';
 
 const StyledDiv = styled.div`
   display: flex;
@@ -19,6 +19,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <StyledDiv>
           <Sidebar />
+          <Feed />
         </StyledDiv>
       </ThemeProvider>
     </StylesProvider>
