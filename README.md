@@ -10,6 +10,20 @@ warn [TS version incompatible](https://github.com/facebook/create-react-app/issu
 2. styled components
 3. Material UI
 
+## Things I learned
+
+1. Styled component and Material UI now can be good fit since we can choose CSS priority by `<StylesProvider injectFirst>`, we don't need to use important to override MUI styles.
+2. Styled component and Material UI has good integration, we can directly used MUI component in styled API. eg: `styled(Button)`
+3. Create theme props in Styled component for whole App usage.
+4. Change tag or component dynamically within Styled component via as API
+5. Using Child Selector within Styled component.
+
+## Challenge
+
+1. Left side bar, isActive issue, not every `<SidebarOption>` will be given isActive props, need to give an default props,and I'm not familiar the way dealing with TypeScript and defaultProps.\
+   I used workaround `<StyledDiv active={isActive ? true : false} />` give props to Styled-component.
+2. CRA v4 with TypeScript can be annoyed by [TS config incompatible](https://github.com/facebook/create-react-app/issues/9868).
+
 ## Available Scripts
 
 In the project directory, you can run:
