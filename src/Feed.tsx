@@ -2,6 +2,7 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import styled from 'styled-components';
 import TweetBox from './TweetBox';
+import Post from './Post';
 
 const StyledFeed = styled.div`
   border-right: 1px solid ${props => props.theme.main.backgroundColor};
@@ -34,6 +35,9 @@ const Feed: React.FC = () => (
     </StyledHeader>
 
     <TweetBox />
+    <Post />
+    <Post />
+    <Post />
   </StyledFeed>
 );
 
