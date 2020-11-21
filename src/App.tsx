@@ -3,6 +3,7 @@ import styled, { ThemeProvider } from 'styled-components';
 import { StylesProvider } from '@material-ui/core/styles';
 import Sidebar from './Sidebar';
 import Feed from './Feed';
+import Widgets from './Widgets';
 import theme from './theme';
 
 const StyledDiv = styled.div`
@@ -20,6 +21,7 @@ function App() {
         <StyledDiv>
           <Sidebar />
           <Feed />
+          <Widgets />
         </StyledDiv>
       </ThemeProvider>
     </StylesProvider>
