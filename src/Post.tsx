@@ -1,12 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import Avatar from '@material-ui/core/Avatar';
-import Button from '@material-ui/core/Button';
 import VerifiedUserIcon from '@material-ui/icons/VerifiedUser';
 import ChatBubbleOutlineIcon from '@material-ui/icons/ChatBubbleOutline';
 import RepeatIcon from '@material-ui/icons/Repeat';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import PublishIcon from '@material-ui/icons/Publish';
+
+type PostProps = {
+  avatar: string;
+  displayName: string;
+  verified: boolean;
+  username: string;
+  text: string;
+  image: string;
+};
 
 const StyledPost = styled.div`
   display: flex;
@@ -48,18 +56,14 @@ const StyledPostContentFooterContainer = styled.div`
   margin-top: 20px;
 `;
 
-const Post: React.FC = () => {
-  const { avatar, displayName, verified, username, text, image } = {
-    avatar:
-      'https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/284832/settings_images/rLlCifhXRJiT0RoN2FjK_Logo_roundbackground_black.png',
-    displayName: 'Rafeh Qazi',
-    verified: true,
-    username: 'cleverqazi',
-    text: 'you made my day',
-    image:
-      'https://cdn.discordapp.com/attachments/483550384133111808/779492492042698762/FB_IMG_1605915870102.jpg',
-  };
-
+const Post: React.FC<PostProps> = ({
+  avatar,
+  displayName,
+  verified,
+  username,
+  text,
+  image,
+}) => {
   return (
     <StyledPost>
       <StyledAvatarContainer>

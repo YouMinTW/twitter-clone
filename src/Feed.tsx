@@ -1,8 +1,8 @@
-import React from 'react';
-import Button from '@material-ui/core/Button';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import TweetBox from './TweetBox';
 import Post from './Post';
+import { usePost, post } from './usePost';
 
 const StyledFeed = styled.div`
   border-right: 1px solid ${props => props.theme.main.backgroundColor};
@@ -28,17 +28,34 @@ const StyledH2 = styled.h2`
   font-size: 20px;
   font-weight: 800;
 `;
-const Feed: React.FC = () => (
-  <StyledFeed>
-    <StyledHeader>
-      <StyledH2>Home</StyledH2>
-    </StyledHeader>
+const Feed: React.FC = () => {
+  const { loading, data } = usePost();
+  const [posts, setPosts] = useState<post[]>([]);
+  useEffect(() => {
+    if (!loading) {
+      setPosts(data?.post || []);
+    }
+  }, [data]);
 
-    <TweetBox />
-    <Post />
-    <Post />
-    <Post />
-  </StyledFeed>
-);
+  return (
+    <StyledFeed>
+      <StyledHeader>
+        <StyledH2>Home</StyledH2>
+      </StyledHeader>
+
+      <TweetBox />
+      {posts.map((post: any) => (
+        <Post
+          avatar={post.member.avatar_url}
+          displayName={post.member.name}
+          verified={post.member.verified}
+          username={post.member.account_name}
+          text={post.content}
+          image={post.image_url}
+        />
+      ))}
+    </StyledFeed>
+  );
+};
 
 export default Feed;
